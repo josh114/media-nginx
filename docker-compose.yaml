@@ -23,6 +23,6 @@ services:
 #   h0k8884ook0gkcg4ggs4o8ko-media_storage:
 #     external: true
 
-# networks:
-#   coolify:
-#     external: true
+networks:
+  coolify:
+    external: true
