@@ -11,7 +11,7 @@ services:
       - h0k8884ook0gkcg4ggs4o8ko-media_storage:/var/media:ro
 
       # Nginx config
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./conf:/etc/nginx/conf.d:ro
 
     expose:
       - "8080"
