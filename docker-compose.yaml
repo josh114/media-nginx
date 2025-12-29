@@ -1,28 +1,10 @@
-version: "3.8"
+version: "3.9"
 
 services:
   media-nginx:
-    image: nginx:1.25-alpine
-    container_name: media-nginx
-    restart: unless-stopped
-
+    build: .
+    ports:
+      - "8080:8080"
     volumes:
-      # 🔑 Shared Coolify-managed volume (READ-ONLY)
       - /var/lib/docker/volumes/h0k8884ook0gkcg4ggs4o8ko-media_storage/_data:/var/media:ro
-
-      # Nginx config
-      - ./conf:/etc/nginx/conf.d:ro
-
-    expose:
-      - "8080"
-
-    networks:
-      - coolify
-# volumes:
-#   # 🚨 IMPORTANT: Must be external, already created by Coolify
-#   h0k8884ook0gkcg4ggs4o8ko-media_storage:
-#     external: true
-
-networks:
-  coolify:
-    external: true
+    restart: always
