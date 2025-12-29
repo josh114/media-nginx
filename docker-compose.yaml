@@ -3,8 +3,6 @@ version: "3.9"
 services:
   media-nginx:
     build: .
-    ports:
-      - "8080:8080"
     volumes:
       - /var/lib/docker/volumes/h0k8884ook0gkcg4ggs4o8ko-media_storage/_data:/var/media:ro
     restart: always
